@@ -6,7 +6,7 @@ WITH payments AS (
         status,
         amount / 100 as amount,
         created AS created_at
-    FROM `dbt-tutorial.stripe.payment`
+    FROM {{ source('stripe', 'payment') }}
 )
 
-SELECT * FROM payments
+SELECT * FROM payments 
