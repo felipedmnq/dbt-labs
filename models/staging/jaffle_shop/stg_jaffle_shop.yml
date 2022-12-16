@@ -2,19 +2,23 @@ version: 2
 
 models:
   - name: stg_customers
+    description: one unique customer per row
     columns:
       - name: customer_id
+        description: pk for stg_customers
         tests:
           - unique
           - not_null
-
   - name: stg_orders
+    description: one order per customer
     columns:
       - name: order_id
+        description: pk for stg_orders
         tests:
           - unique
           - not_null
       - name: status
+        description: '{{ doc("order_status") }}'
         tests:
           - accepted_values:
               values:
@@ -24,6 +28,7 @@ models:
                 - returned
                 - placed
       - name: customer_id
+        description: customer_id
         tests:
           - relationships:
               to: ref('stg_customers')
