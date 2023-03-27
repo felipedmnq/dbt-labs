@@ -1,4 +1,4 @@
-WITH customers AS (
+ WITH customers AS (
     SELECT 
         id AS customer_id,
         first_name,
@@ -6,4 +6,5 @@ WITH customers AS (
     FROM {{ source('jaffle_shop', 'customers') }}
 )
 
-SELECT * FROM customers
+SELECT *
+FROM customers
