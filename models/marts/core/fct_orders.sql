@@ -1,3 +1,9 @@
+{{
+    config(
+        materialized='ephemeral'
+    )
+}}
+
 WITH payments AS (
     SELECT *
     FROM {{ ref('stg_payments') }}
