@@ -1,2 +1,2 @@
 # dbt-labs
-Repo used from dbt labs 
+Repo used for dbt labs practices
